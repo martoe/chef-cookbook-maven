@@ -1,3 +1,5 @@
+(cloned from https://github.com/opscode-cookbooks/maven, see notes below)
+
 Description
 ===========
 
@@ -120,3 +122,13 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+
+Modifications
+=============
+
+Based on https://github.com/opscode-cookbooks/maven
+
+The "develop" is based on tag "0.15.0" and adds the following features:
+* Configure mirror site for downloading
+* Configure accurate Maven version
