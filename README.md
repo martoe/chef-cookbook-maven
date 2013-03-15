@@ -132,3 +132,5 @@ Based on https://github.com/opscode-cookbooks/maven
 The "develop" is based on tag "0.15.0" and adds the following features:
 * Configure mirror site for downloading
 * Configure accurate Maven version
+* Support for 2.x versions dropped (not needed yet, but it should be easy to reintroduce)
+

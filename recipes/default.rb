@@ -21,11 +21,20 @@
 #
 
 include_recipe "java"
+include_recipe "ark"
 
-include_recipe "maven::maven#{node['maven']['version']}"
+version = node['maven']['version']
+mirror = node['maven']['mirror']
 
-if node['maven']['setup_bin']
-  link '/usr/bin/mvn' do
-    to "#{node['maven']['m2_home']}/bin/mvn"
-  end
+ark "maven" do
+  url "#{mirror}/maven/maven-3/#{version}/binaries/apache-maven-#{version}-bin.tar.gz"
+  version "#{version}"
+  home_dir node['maven']['m2_home']
+  append_env_path true
+  action :install
+end
+
+template "/etc/mavenrc" do
+  source "mavenrc.erb"
+  mode "0755"
 end
